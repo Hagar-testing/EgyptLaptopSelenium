@@ -1,0 +1,18 @@
+package com.egyptlaptop.base;
+
+
+import com.egyptlaptop.utils.ElementInteraction;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
+
+public class BasePage {
+
+    protected final ElementInteraction elementInteraction;
+    protected WebDriver driver;
+
+    public BasePage(WebDriver driver) {
+        this.driver = driver;
+        this.elementInteraction = new ElementInteraction(driver);
+        PageFactory.initElements(driver, this);
+    }
+}
