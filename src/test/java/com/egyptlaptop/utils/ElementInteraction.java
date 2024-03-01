@@ -1,6 +1,7 @@
 package com.egyptlaptop.utils;
 
 import com.egyptlaptop.enums.LocatorType;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -73,8 +74,10 @@ public class ElementInteraction {
 
 
     public ElementInteraction setInput(WebElement element, String text, LocatorType type){
-        locateElement(element,type).sendKeys(text);
         logElementActionStep(element, "set input [ " + text + " ] to ");
+        WebElement locatedElement = locateElement(element,type);
+        javascriptExecutorUtils.clearInput(locatedElement);
+        locatedElement.sendKeys(text);
 
         return this;
     }
