@@ -22,17 +22,19 @@ public class ProductDetailsPage extends BasePage {
     WebElement cart_button;
     @FindBy(xpath = CONTINUE_SHOPPING_BUTTON_XPath)
     WebElement continueShipping_btn;
+
+
     public ProductDetailsPage(WebDriver driver) {
         super(driver);
     }
 
     public ProductDetailsPage setProductCountInCart(String quantity){
-        elementInteraction.setInput(counter_input, quantity);
+        elementInteraction.setInputWithJavaScriptExecutor(counter_input, quantity);
         return this;
     }
 
     public ProductDetailsPage clickOnAddToCartButton(){
-        addToCartButton.click();
+        elementInteraction.javascriptClick(addToCartButton);
         return this;
     }
 
@@ -47,7 +49,7 @@ public class ProductDetailsPage extends BasePage {
     }
 
     public CartPage navigateToCartPage(){
-        elementInteraction.simpleClick(viewCartDropDown_button, LocatorType.WITH_WAIT);
+        elementInteraction.javascriptClick(viewCartDropDown_button, LocatorType.WITH_WAIT);
         return new CartPage(driver);
     }
 }

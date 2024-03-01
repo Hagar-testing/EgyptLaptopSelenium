@@ -10,7 +10,6 @@ public class ProductsListPage extends BasePage {
     @FindBy(xpath = "//div[@id='categories_view_pagination_contents']//div[@class='ty-column4']//div[@class='ut2-gl__item ']")
     WebElement product;
 
-
     @FindBy(xpath = "//li[contains(., 'In stock')]/input[@type='checkbox']")
     WebElement inStock_checkbox;
     public ProductsListPage(WebDriver driver) {
@@ -18,7 +17,7 @@ public class ProductsListPage extends BasePage {
     }
 
     public ProductDetailsPage clickOnProduct(){
-        elementInteraction.simpleClick(product);
+        elementInteraction.javascriptClick(product);
         return new ProductDetailsPage(driver);
     }
 
