@@ -22,4 +22,8 @@ public class JavascriptExecutorUtils {
 
     }
 
+    public void clearInput(WebElement element){
+        jsExecutor.executeScript("arguments[0].value=''", element);
+    }
+
 }
