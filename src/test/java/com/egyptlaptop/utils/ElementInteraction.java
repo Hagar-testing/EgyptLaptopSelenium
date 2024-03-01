@@ -36,8 +36,8 @@ public class ElementInteraction {
 
     // Method to perform a simple click with element visibility wait
     public ElementInteraction simpleClick(WebElement element, LocatorType type) {
-        locateElement(element,type).click();
         logElementActionStep(element, "Simple click on");
+        locateElement(element,type).click();
         return this;
     }
 
