@@ -42,8 +42,8 @@ public class MainPage extends BasePage {
         return  searchResults_list.size() > 0;
     }
 
-    public MainPage clickOnCategory(){
+    public CategoriesListPage clickOnCategory(){
          elementInteraction.simpleClick(first_category_div);
-         return this;
+         return new CategoriesListPage(driver);
     }
 }
