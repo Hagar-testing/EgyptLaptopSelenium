@@ -16,8 +16,9 @@ public class CategoriesListPage extends BasePage {
         super(driver);
     }
 
-    public void selectCategory(){
+    public ProductsListPage selectCategory(){
         elementInteraction.simpleClick(categoryItem);
+        return new ProductsListPage(driver);
     }
 
 }
