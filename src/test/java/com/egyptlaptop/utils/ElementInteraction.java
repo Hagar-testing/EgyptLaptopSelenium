@@ -26,7 +26,7 @@ public class ElementInteraction {
             case LOCATE_ONLY -> {
                 return element;
             }
-            case WITH_WAIT, FULL_WAIT -> {
+            case WITH_WAIT -> {
                 return waitUtils.waitForVisibilityOfElement(element);
             }
             default -> throw new IllegalArgumentException("Invalid locator type");
