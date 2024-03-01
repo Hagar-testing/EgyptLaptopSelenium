@@ -26,8 +26,8 @@ public class ProductDetailsPage extends BasePage {
         super(driver);
     }
 
-    public ProductDetailsPage setProductCountInCart(){
-        elementInteraction.setInput(counter_input,"1");
+    public ProductDetailsPage setProductCountInCart(String quantity){
+        elementInteraction.setInput(counter_input, quantity);
         return this;
     }
 
