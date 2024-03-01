@@ -23,4 +23,11 @@ public class MainTest extends BaseTest {
 
     }
 
+    @Test
+    public void clickOnFirstCategory(){
+        new MainPage(getDriver())
+                .load()
+                .clickOnCategory()
+                .selectCategory();
+    }
 }
