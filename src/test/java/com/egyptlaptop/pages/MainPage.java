@@ -10,8 +10,8 @@ import org.openqa.selenium.support.FindBy;
 import java.util.List;
 
 import static com.egyptlaptop.constants.JsonKeysConstants.CATEGORY_XPATH;
-import static com.egyptlaptop.constants.MainLocators.SEARCH_INPUT_ID;
-import static com.egyptlaptop.constants.MainLocators.SEARCH_PRODUCTS_LIST_TITLES_XPATH;
+import static com.egyptlaptop.constants.MainPageLocators.SEARCH_INPUT_ID;
+import static com.egyptlaptop.constants.MainPageLocators.SEARCH_PRODUCTS_LIST_TITLES_XPATH;
 
 public class MainPage extends BasePage {
 

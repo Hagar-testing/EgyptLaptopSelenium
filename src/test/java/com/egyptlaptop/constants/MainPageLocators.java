@@ -1,6 +1,6 @@
 package com.egyptlaptop.constants;
 
-public class MainLocators {
+public class MainPageLocators {
 
     public static final String SEARCH_INPUT_ID = "search_input";
 
