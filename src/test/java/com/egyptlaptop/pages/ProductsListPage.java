@@ -1,18 +1,19 @@
 package com.egyptlaptop.pages;
 
 import com.egyptlaptop.base.BasePage;
-import com.egyptlaptop.enums.LocatorType;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import static com.egyptlaptop.constants.locators.ProductListLocators.IN_STOCK_CHECKBOX_XPATH;
+import static com.egyptlaptop.constants.locators.ProductListLocators.PRODUCT_XPATH;
+
 public class ProductsListPage extends BasePage {
 
-    @FindBy(xpath = "//div[@id='categories_view_pagination_contents']//div[@class='ty-column4']//div[@class='ut2-gl__item ']")
+    @FindBy(xpath = PRODUCT_XPATH)
     WebElement product;
 
-    @FindBy(xpath = "//li[contains(., 'In stock')]/input[@type='checkbox']")
+    @FindBy(xpath = IN_STOCK_CHECKBOX_XPATH)
     WebElement inStock_checkbox;
     public ProductsListPage(WebDriver driver) {
         super(driver);
