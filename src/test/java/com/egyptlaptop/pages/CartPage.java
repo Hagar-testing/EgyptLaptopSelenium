@@ -13,7 +13,7 @@ public class CartPage extends BasePage {
     @FindBy(xpath = QUANTITY_INPUT_XPATH)
     WebElement quantity_input;
 
-    @FindBy(xpath = CHECKOUT_BUTTON_XPATH)
+    @FindBy(css = CHECKOUT_BUTTON_XPATH)
     WebElement checkout_button;
     public CartPage(WebDriver driver) {
         super(driver);
