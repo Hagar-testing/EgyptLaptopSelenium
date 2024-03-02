@@ -2,25 +2,24 @@ package com.egyptlaptop.pages;
 
 import com.egyptlaptop.base.BasePage;
 import com.egyptlaptop.enums.LocatorType;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import static com.egyptlaptop.constants.ProductDetailsLocators.*;
+import static com.egyptlaptop.constants.locators.ProductDetailsLocators.*;
 
 public class ProductDetailsPage extends BasePage {
 
-    @FindBy(xpath = "//input[contains(@id,'qty_count')]")
+    @FindBy(xpath = COUNTER_INPUT_XPATH)
     WebElement counter_input;
 
-    @FindBy(xpath = "//bdi[normalize-space()='Add to cart']")
+    @FindBy(xpath = ADD_TO_CART_BUTTON_XPATH)
     WebElement addToCartButton;
 
-    @FindBy(xpath = "//a[@class='ty-btn ty-btn__outline' and contains(text(), 'View cart')]")
+    @FindBy(xpath = VIEW_CART_DROPDOWN_BUTTON_XPATH)
     WebElement viewCartDropDown_button;
 
-    @FindBy(className = "ut2-icon-use_icon_cart")
+    @FindBy(className = CART_BUTTON_CLASS)
     WebElement cart_button;
     @FindBy(xpath = CONTINUE_SHOPPING_BUTTON_XPath)
     WebElement continueShipping_btn;

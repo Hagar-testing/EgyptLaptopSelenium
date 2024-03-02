@@ -7,9 +7,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import java.util.List;
-import static com.egyptlaptop.constants.MainPageLocators.CATEGORY_XPATH;
-import static com.egyptlaptop.constants.MainPageLocators.SEARCH_INPUT_ID;
-import static com.egyptlaptop.constants.MainPageLocators.SEARCH_PRODUCTS_LIST_TITLES_XPATH;
+import static com.egyptlaptop.constants.locators.MainPageLocators.CATEGORY_XPATH;
+import static com.egyptlaptop.constants.locators.MainPageLocators.SEARCH_INPUT_ID;
+import static com.egyptlaptop.constants.locators.MainPageLocators.SEARCH_PRODUCTS_LIST_TITLES_XPATH;
 
 public class MainPage extends BasePage {
 

@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import static com.egyptlaptop.constants.CategoriesListLocators.CATEGORY_ITEM_CLASS;
+import static com.egyptlaptop.constants.locators.CategoriesListLocators.CATEGORY_ITEM_CLASS;
 
 public class CategoriesListPage extends BasePage {
 

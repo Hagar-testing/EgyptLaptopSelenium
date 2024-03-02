@@ -1,4 +1,4 @@
-package com.egyptlaptop.constants;
+package com.egyptlaptop.constants.locators;
 
 public class CategoriesListLocators {
 

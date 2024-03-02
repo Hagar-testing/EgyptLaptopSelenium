@@ -1,26 +1,27 @@
 package com.egyptlaptop.pages;
 
 import com.egyptlaptop.base.BasePage;
-import com.egyptlaptop.utils.ConfigUtils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import static com.egyptlaptop.constants.locators.CheckoutLocators.*;
+
 public class CheckoutPage extends BasePage {
 
-    @FindBy(className = "first-name")
+    @FindBy(className = FIRST_NAME_INPUT_CLASS)
     WebElement firstName_input;
 
-    @FindBy(id = "litecheckout_phone")
+    @FindBy(id = PHONE_INPUT_ID)
     WebElement phone_input;
 
-    @FindBy(name = "accept_terms")
+    @FindBy(name = ACCEPT_TERMS_CHECKBOX_NAME)
     WebElement acceptTerms_checkbox;
 
-    @FindBy(id = "litecheckout_s_address")
+    @FindBy(id = ADDRESS_INPUT_ID)
     WebElement address_input;
 
-    @FindBy(id = "litecheckout_place_order")
+    @FindBy(id = SUBMIT_BUTTON_ID)
     WebElement submit_button;
 
     public CheckoutPage(WebDriver driver) {
