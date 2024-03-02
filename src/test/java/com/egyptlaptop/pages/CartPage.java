@@ -24,7 +24,7 @@ public class CartPage extends BasePage {
     }
 
     public CheckoutPage clickOnCheckout(){
-        elementInteraction.javascriptClick(checkout_button);
+        elementInteraction.simpleClick(checkout_button);
         return new CheckoutPage(driver);
     }
 }
