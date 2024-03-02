@@ -1,6 +1,8 @@
 package com.egyptlaptop.pages;
 
 import com.egyptlaptop.base.BasePage;
+import com.egyptlaptop.enums.LocatorType;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -17,7 +19,7 @@ public class ProductsListPage extends BasePage {
     }
 
     public ProductDetailsPage clickOnProduct(){
-        elementInteraction.javascriptClick(product);
+        product.click();
         return new ProductDetailsPage(driver);
     }
 
