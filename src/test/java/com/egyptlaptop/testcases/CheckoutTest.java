@@ -3,6 +3,9 @@ package com.egyptlaptop.testcases;
 import com.egyptlaptop.base.BaseTest;
 import com.egyptlaptop.data.reader.TestDataProviders;
 import com.egyptlaptop.pages.MainPage;
+import io.qameta.allure.Description;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -10,10 +13,15 @@ import java.util.HashMap;
 
 import static com.egyptlaptop.constants.JsonKeysConstants.*;
 
+@Feature("Checkout Feature")
 public class CheckoutTest extends BaseTest {
-    @Test(dataProvider = "orderData", dataProviderClass = TestDataProviders.class)
+
+    @Story("Checkout Process")
+    @Description("Verify if the checkout process works correctly")
+    @Test(dataProvider = "orderData", dataProviderClass = TestDataProviders.class,
+            description = "Test the checkout process with provided data")
     public void checkIfCheckoutWorks(HashMap<String, String> data) {
-         new MainPage(getDriver())
+        new MainPage(getDriver())
                 .load()
                 .clickOnCategory()
                 .selectCategory()
@@ -21,13 +29,12 @@ public class CheckoutTest extends BaseTest {
                 .addProductToCart(String.valueOf(1))
                 .navigateToCartPage()
                 .clickOnCheckout()
-                 .fillCheckoutData(data.get(NAME),data.get(PHONE),data.get(ADDRESS));
+                .fillCheckoutData(data.get(NAME),data.get(PHONE),data.get(ADDRESS));
 
-                //.checkIfOrderCreationMsgIsDisplayed();
+        //.checkIfOrderCreationMsgIsDisplayed();
 
-       // Assert.assertTrue(isSuccessMsgDisplayed);
+        // Assert.assertTrue(isSuccessMsgDisplayed);
 
     }
-
-
 }
+
