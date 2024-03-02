@@ -24,11 +24,8 @@ public class CheckoutTest extends BaseTest {
                 .clickOnCartButton()
                 .navigateToCartPage()
                 .clickOnCheckout()
-                .setFirstName(data.get(NAME))
-                .setPhone(data.get(PHONE))
-                .setAddress(data.get(ADDRESS))
-                .acceptTerms()
-                .clickSubmit();
+                 .fillCheckoutData(data.get(NAME),data.get(PHONE),data.get(ADDRESS));
+
                 //.checkIfOrderCreationMsgIsDisplayed();
 
        // Assert.assertTrue(isSuccessMsgDisplayed);

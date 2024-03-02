@@ -1,6 +1,7 @@
 package com.egyptlaptop.pages;
 
 import com.egyptlaptop.base.BasePage;
+import com.egyptlaptop.utils.ElementInteraction;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -28,27 +29,15 @@ public class CheckoutPage extends BasePage {
         super(driver);
     }
 
-    public CheckoutPage setFirstName(String firstName){
-        firstName_input.sendKeys(firstName);
-        return this;
-    }
 
-    public CheckoutPage setPhone(String phone){
-        phone_input.sendKeys(phone);
-        return this;
-    }
+    public CompleteOrderPage fillCheckoutData(String firstName,String phone,String address){
+        elementInteraction.setInput(firstName_input, firstName)
+                .setInput(phone_input,phone)
+                .setInput(address_input,address)
+                .simpleClick(acceptTerms_checkbox)
+                .simpleClick(submit_button);
 
-    public CheckoutPage setAddress(String address){
-        address_input.sendKeys(address);
-        return this;
-    }
-    public CheckoutPage acceptTerms(){
-        acceptTerms_checkbox.click();
-        return this;
-    }
-
-    public CompleteOrderPage clickSubmit(){
-        submit_button.click();
         return new CompleteOrderPage(driver);
     }
+
 }
