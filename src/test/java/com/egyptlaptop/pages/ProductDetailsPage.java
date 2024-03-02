@@ -2,6 +2,7 @@ package com.egyptlaptop.pages;
 
 import com.egyptlaptop.base.BasePage;
 import com.egyptlaptop.enums.LocatorType;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -9,16 +10,17 @@ import org.openqa.selenium.support.FindBy;
 import static com.egyptlaptop.constants.ProductDetailsLocators.*;
 
 public class ProductDetailsPage extends BasePage {
-    @FindBy(id = COUNTER_INPUT_ID)
+
+    @FindBy(xpath = "//input[contains(@id,'qty_count')]")
     WebElement counter_input;
 
-    @FindBy(id = ADD_TO_CART_BUTTON_ID)
+    @FindBy(xpath = "//bdi[normalize-space()='Add to cart']")
     WebElement addToCartButton;
 
-    @FindBy(linkText = VIEW_CART_BUTTON_LINK_TEXT)
+    @FindBy(xpath = "//a[@class='ty-btn ty-btn__outline' and contains(text(), 'View cart')]")
     WebElement viewCartDropDown_button;
 
-    @FindBy(id = CART_BUTTON_ID)
+    @FindBy(className = "ut2-icon-use_icon_cart")
     WebElement cart_button;
     @FindBy(xpath = CONTINUE_SHOPPING_BUTTON_XPath)
     WebElement continueShipping_btn;
@@ -29,6 +31,7 @@ public class ProductDetailsPage extends BasePage {
     }
 
     public ProductDetailsPage setProductCountInCart(String quantity){
+
         elementInteraction.setInputWithJavaScriptExecutor(counter_input, quantity);
         return this;
     }
@@ -44,7 +47,7 @@ public class ProductDetailsPage extends BasePage {
     }
 
     public ProductDetailsPage clickOnCartButton() {
-        cart_button.click();
+        elementInteraction.javascriptClick(cart_button);
         return this;
     }
 
