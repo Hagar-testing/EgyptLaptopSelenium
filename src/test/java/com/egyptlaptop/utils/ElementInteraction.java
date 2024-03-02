@@ -89,9 +89,10 @@ public class ElementInteraction {
 
     // Method to set input text using JavaScriptExecutor
     public ElementInteraction setInputWithJavaScriptExecutor(WebElement element, String text, LocatorType type) {
-        javascriptExecutorUtils.sendInput(locateElement(element,type), text);
         logElementActionStep(element, "set input [ " + text + "] with java script executor to ");
-
+        WebElement locatedElement = locateElement(element,type);
+        javascriptExecutorUtils.clearInput(locatedElement);
+        javascriptExecutorUtils.sendInput(locatedElement, text);
         return this;
     }
 
