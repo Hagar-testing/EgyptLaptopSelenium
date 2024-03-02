@@ -46,8 +46,8 @@ public class CheckoutPage extends BasePage {
         return this;
     }
 
-    public CheckoutPage clickSubmit(){
+    public CompleteOrderPage clickSubmit(){
         submit_button.click();
-        return this;
+        return new CompleteOrderPage(driver);
     }
 }
