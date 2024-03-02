@@ -29,29 +29,20 @@ public class ProductDetailsPage extends BasePage {
         super(driver);
     }
 
-    public ProductDetailsPage setProductCountInCart(String quantity){
+    public ProductDetailsPage addProductToCart(String quantity){
+        elementInteraction
+                .setInputWithJavaScriptExecutor(counter_input, quantity)
+                .javascriptClick(addToCartButton)
+                .simpleClick(continueShipping_btn);
 
-        elementInteraction.setInputWithJavaScriptExecutor(counter_input, quantity);
         return this;
-    }
 
-    public ProductDetailsPage clickOnAddToCartButton(){
-        elementInteraction.javascriptClick(addToCartButton);
-        return this;
     }
-
-    public ProductDetailsPage closeDialog(){
-        continueShipping_btn.click();
-        return this;
-    }
-
-    public ProductDetailsPage clickOnCartButton() {
-        elementInteraction.javascriptClick(cart_button);
-        return this;
-    }
-
+    
     public CartPage navigateToCartPage(){
-        elementInteraction.javascriptClick(viewCartDropDown_button, LocatorType.WITH_WAIT);
+        elementInteraction
+                .javascriptClick(cart_button)
+                .javascriptClick(viewCartDropDown_button, LocatorType.WITH_WAIT);
         return new CartPage(driver);
     }
 }

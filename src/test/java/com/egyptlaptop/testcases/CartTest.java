@@ -15,12 +15,8 @@ public class CartTest extends BaseTest {
                 .load()
                 .clickOnCategory()
                 .selectCategory()
-                // .checkInStockCheckBox()
                 .clickOnProduct()
-                .setProductCountInCart(quantityToBeAdded)
-                .clickOnAddToCartButton()
-                .closeDialog()
-                .clickOnCartButton()
+                .addProductToCart(quantityToBeAdded)
                 .navigateToCartPage()
                 .getProductQuantityInCart();
 

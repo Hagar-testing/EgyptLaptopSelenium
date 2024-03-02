@@ -18,10 +18,7 @@ public class CheckoutTest extends BaseTest {
                 .clickOnCategory()
                 .selectCategory()
                 .clickOnProduct()
-                .setProductCountInCart(String.valueOf(1))
-                .clickOnAddToCartButton()
-                .closeDialog()
-                .clickOnCartButton()
+                .addProductToCart(String.valueOf(1))
                 .navigateToCartPage()
                 .clickOnCheckout()
                  .fillCheckoutData(data.get(NAME),data.get(PHONE),data.get(ADDRESS));
