@@ -35,8 +35,8 @@ public class CheckoutPage extends BasePage {
         elementInteraction.setInput(firstName_input, firstName, FIRST_NAME_INPUT_ELEMENT_NAME)
                 .setInput(phone_input, phone, PHONE_INPUT_ELEMENT_NAME)
                 .setInput(address_input, address, ADDRESS_INPUT_ELEMENT_NAME)
-                .simpleClick(acceptTerms_checkbox, ACCEPT_TERMS_CHECKBOX_ELEMENT_NAME);
-        //.simpleClick(submit_button);
+                .simpleClick(acceptTerms_checkbox, ACCEPT_TERMS_CHECKBOX_ELEMENT_NAME)
+                .simpleClick(submit_button,SUBMIT_BUTTON_ELEMENT_NAME);
 
         return new CompleteOrderPage(driver);
     }

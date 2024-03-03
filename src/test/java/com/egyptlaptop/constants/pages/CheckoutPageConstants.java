@@ -19,4 +19,6 @@ public class CheckoutPageConstants {
     public static final String PHONE_INPUT_ELEMENT_NAME = "phone input";
     public static final String ADDRESS_INPUT_ELEMENT_NAME = "address input";
     public static final String ACCEPT_TERMS_CHECKBOX_ELEMENT_NAME = "accept terms checkbox";
+    public static final String SUBMIT_BUTTON_ELEMENT_NAME = "submit button";
+
 }
