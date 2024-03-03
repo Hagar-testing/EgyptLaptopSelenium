@@ -21,7 +21,7 @@ public class CartPage extends BasePage {
 
     @Step
     public String getProductQuantityInCart(){
-         return quantity_input.getAttribute("value");
+         return elementInteraction.getInputValue(quantity_input,COUNTER_ELEMENT_NAME);
     }
 
     @Step

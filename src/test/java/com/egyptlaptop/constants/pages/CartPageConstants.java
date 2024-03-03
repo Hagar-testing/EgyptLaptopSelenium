@@ -9,4 +9,6 @@ public class CartPageConstants {
 
 
     public static final String CHECKOUT_BUTTON_ELEMENT_NAME = "checkout button";
+    public static final String COUNTER_ELEMENT_NAME = "counter input";
+
 }

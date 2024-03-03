@@ -68,10 +68,6 @@ public class ElementInteraction {
         return javascriptClick(element, LOCATE_ONLY,elementName);
     }
 
-    // Other methods like type, select, etc. can be added here
-
-    // Method to handle the full locating strategy (similar to your original locatingElementStrategy)
-
 
     public ElementInteraction setInput(WebElement element, String text, LocatorType type,String elementName){
         logElementActionStep("set input [ " + text + " ] to ",elementName);
@@ -116,6 +112,10 @@ public class ElementInteraction {
         return new ElementListInteraction(driver);
     }
 
+    public String  getInputValue(WebElement element, String elementName){
+        logElementActionStep("get input value from ",elementName);
+        return element.getAttribute("value");
+    }
     private static void logElementActionStep(String action, String elementName) {
         Logger.logStep("[Element Interaction] " + action + " [" + elementName + "] element");
     }
