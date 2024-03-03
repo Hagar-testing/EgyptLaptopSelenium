@@ -13,7 +13,7 @@
 * Have a supporting Utils package in *src/test/java* file path, named ***"Utils"*** 
 
 ### How to run the project main test cases locally:
-* A properties file ***"automationPractice.properties"*** can be found it *src/main/resources* file path including all the configurations needed in the execution
+* A properties file ***"prod.properties"*** can be found in *config* package including all the configurations needed in the execution
 * Can find the test cases in the *src/test/java* folder mainly in the *testcases* package
 * Can find the test suite for all the main practice test cases in the *testing.xml* file
 * To start the execution, right click on the testing.xml file and click run
