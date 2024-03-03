@@ -1,6 +1,7 @@
 package com.egyptlaptop.pages;
 
 import com.egyptlaptop.base.BasePage;
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -19,12 +20,14 @@ public class CartPage extends BasePage {
         super(driver);
     }
 
+    @Step
     public String getProductQuantityInCart(){
          return quantity_input.getAttribute("value");
     }
 
+    @Step
     public CheckoutPage clickOnCheckout(){
-        elementInteraction.simpleClick(checkout_button);
+        elementInteraction.simpleClick(checkout_button,"checkout button");
         return new CheckoutPage(driver);
     }
 }

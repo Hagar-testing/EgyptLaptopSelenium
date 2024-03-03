@@ -21,6 +21,12 @@ public class MainPage extends BasePage {
 
     @FindBy(xpath = CATEGORY_XPATH)
     WebElement first_category_div;
+
+    @FindBy(xpath = "//a[normalize-space()='Profile details']")
+    WebElement profileDetails_btn;
+
+    @FindBy(css = "a[class=\"ty-menu__item-link a-first-lvl childs\"]")
+    WebElement categories_dropdown;
     public MainPage(WebDriver driver) {
         super(driver);
     }
@@ -32,7 +38,7 @@ public class MainPage extends BasePage {
     }
     @Step
     public MainPage sendSearchInput(String searchText) {
-        elementInteraction.setInput(search_input,searchText);
+        elementInteraction.setInput(search_input,searchText,"search input");
         return this;
     }
 
@@ -41,7 +47,17 @@ public class MainPage extends BasePage {
     }
 
     public CategoriesListPage clickOnCategory(){
-         elementInteraction.simpleClick(first_category_div);
+         elementInteraction.simpleClick(first_category_div,"first category on categories list");
          return new CategoriesListPage(driver);
+    }
+
+    @Step
+    public boolean isProfileDetailsDisplayed(){
+        return profileDetails_btn.isDisplayed();
+    }
+
+    @Step
+    public void test(){
+        categories_dropdown.click();
     }
 }

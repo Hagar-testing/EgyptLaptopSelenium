@@ -2,6 +2,7 @@ package com.egyptlaptop.pages;
 
 import com.egyptlaptop.base.BasePage;
 import com.egyptlaptop.utils.ElementInteraction;
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -30,12 +31,13 @@ public class CheckoutPage extends BasePage {
     }
 
 
+    @Step
     public CompleteOrderPage fillCheckoutData(String firstName,String phone,String address){
-        elementInteraction.setInput(firstName_input, firstName)
-                .setInput(phone_input,phone)
-                .setInput(address_input,address)
-                .simpleClick(acceptTerms_checkbox)
-                .simpleClick(submit_button);
+        elementInteraction.setInput(firstName_input, firstName,"first name")
+                .setInput(phone_input,phone, "phone")
+                .setInput(address_input,address, "address")
+                .simpleClick(acceptTerms_checkbox, "accept terms checkbox");
+                //.simpleClick(submit_button);
 
         return new CompleteOrderPage(driver);
     }

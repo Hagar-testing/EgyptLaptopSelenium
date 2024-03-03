@@ -2,6 +2,7 @@ package com.egyptlaptop.pages;
 
 import com.egyptlaptop.base.BasePage;
 import com.egyptlaptop.enums.LocatorType;
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -29,20 +30,22 @@ public class ProductDetailsPage extends BasePage {
         super(driver);
     }
 
+    @Step
     public ProductDetailsPage addProductToCart(String quantity){
         elementInteraction
-                .setInputWithJavaScriptExecutor(counter_input, quantity)
-                .javascriptClick(addToCartButton)
-                .simpleClick(continueShipping_btn);
+                .setInputWithJavaScriptExecutor(counter_input, quantity,"counter input")
+                .javascriptClick(addToCartButton, "add to cart button")
+                .simpleClick(continueShipping_btn, "continue shipping button");
 
         return this;
 
     }
-    
+
+    @Step
     public CartPage navigateToCartPage(){
         elementInteraction
-                .javascriptClick(cart_button)
-                .javascriptClick(viewCartDropDown_button, LocatorType.WITH_WAIT);
+                .javascriptClick(cart_button,"cart button")
+                .javascriptClick(viewCartDropDown_button, LocatorType.WITH_WAIT,"view cart button in cart drop down list");
         return new CartPage(driver);
     }
 }

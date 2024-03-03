@@ -1,6 +1,7 @@
 package com.egyptlaptop.pages;
 
 import com.egyptlaptop.base.BasePage;
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -19,6 +20,7 @@ public class ProductsListPage extends BasePage {
         super(driver);
     }
 
+    @Step
     public ProductDetailsPage clickOnProduct(){
         product.click();
         return new ProductDetailsPage(driver);

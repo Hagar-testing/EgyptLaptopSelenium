@@ -1,6 +1,7 @@
 package com.egyptlaptop.pages;
 
 import com.egyptlaptop.base.BasePage;
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -16,8 +17,9 @@ public class CategoriesListPage extends BasePage {
         super(driver);
     }
 
+    @Step
     public ProductsListPage selectCategory(){
-        elementInteraction.simpleClick(categoryItem);
+        elementInteraction.simpleClick(categoryItem,"category item");
         return new ProductsListPage(driver);
     }
 

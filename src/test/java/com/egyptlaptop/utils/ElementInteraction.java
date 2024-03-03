@@ -36,15 +36,15 @@ public class ElementInteraction {
 
 
     // Method to perform a simple click with element visibility wait
-    public ElementInteraction simpleClick(WebElement element, LocatorType type) {
-        logElementActionStep(element, "Simple click on");
+    public ElementInteraction simpleClick(WebElement element, LocatorType type,String elementName) {
+        logElementActionStep("Simple click on", elementName);
         locateElement(element,type).click();
         return this;
     }
 
     // Overloaded method with default value for LocatorType
-    public ElementInteraction simpleClick(WebElement element) {
-        return simpleClick(element, LOCATE_ONLY);
+    public ElementInteraction simpleClick(WebElement element,String elementName) {
+        return simpleClick(element, LOCATE_ONLY,elementName);
     }
 
     // Method to perform a click with hover and element visibility wait
@@ -56,16 +56,16 @@ public class ElementInteraction {
     }
 
     // Method to perform a click using JavaScript and element visibility wait
-    public ElementInteraction javascriptClick(WebElement element, LocatorType type) {
+    public ElementInteraction javascriptClick(WebElement element, LocatorType type,String elementName) {
         WebElement element1 = locateElement(element, type);
-        logElementActionStep(element, "javascript click on");
+        logElementActionStep("javascript click on",elementName);
         javascriptExecutorUtils.executeJavaScriptClick(element1);
 
         return this;
     }
 
-    public ElementInteraction javascriptClick(WebElement element){
-        return javascriptClick(element, LOCATE_ONLY);
+    public ElementInteraction javascriptClick(WebElement element,String elementName){
+        return javascriptClick(element, LOCATE_ONLY,elementName);
     }
 
     // Other methods like type, select, etc. can be added here
@@ -73,8 +73,8 @@ public class ElementInteraction {
     // Method to handle the full locating strategy (similar to your original locatingElementStrategy)
 
 
-    public ElementInteraction setInput(WebElement element, String text, LocatorType type){
-        logElementActionStep(element, "set input [ " + text + " ] to ");
+    public ElementInteraction setInput(WebElement element, String text, LocatorType type,String elementName){
+        logElementActionStep("set input [ " + text + " ] to ",elementName);
         WebElement locatedElement = locateElement(element,type);
         javascriptExecutorUtils.clearInput(locatedElement);
         locatedElement.sendKeys(text);
@@ -82,43 +82,42 @@ public class ElementInteraction {
         return this;
     }
 
-    public ElementInteraction setInput(WebElement element, String text){
-        return setInput(element,text, LOCATE_ONLY);
+    public ElementInteraction setInput(WebElement element, String text,String elementName){
+        return setInput(element,text, LOCATE_ONLY,elementName);
     }
 
 
     // Method to set input text using JavaScriptExecutor
-    public ElementInteraction setInputWithJavaScriptExecutor(WebElement element, String text, LocatorType type) {
-        logElementActionStep(element, "set input [ " + text + "] with java script executor to ");
+    public ElementInteraction setInputWithJavaScriptExecutor(WebElement element, String text, LocatorType type,String elementName) {
+        logElementActionStep("set input [ " + text + "] with java script executor to ",elementName);
         WebElement locatedElement = locateElement(element,type);
         javascriptExecutorUtils.clearInput(locatedElement);
         javascriptExecutorUtils.sendInput(locatedElement, text);
         return this;
     }
 
-    public ElementInteraction setInputWithJavaScriptExecutor(WebElement element, String text) {
-        return setInputWithJavaScriptExecutor(element,text, LOCATE_ONLY);
+    public ElementInteraction setInputWithJavaScriptExecutor(WebElement element, String text,String elementName) {
+        return setInputWithJavaScriptExecutor(element,text, LOCATE_ONLY,elementName);
     }
 
     // Method to simulate Backspace key press using sendKeys
-    public ElementInteraction simulateBackspace(WebElement element, LocatorType type) {
+    public ElementInteraction simulateBackspace(WebElement element, LocatorType type,String elementName) {
         locateElement(element,type).sendKeys(Keys.BACK_SPACE);
-        logElementActionStep(element, "Click on back space");
+        logElementActionStep("Click on back space",elementName);
 
         return this;
     }
 
-    public ElementInteraction simulateBackspace(WebElement element) {
-        return simulateBackspace(element, LOCATE_ONLY);
+    public ElementInteraction simulateBackspace(WebElement element,String elementName) {
+        return simulateBackspace(element, LOCATE_ONLY,elementName);
     }
 
     public ElementListInteraction withList() {
         return new ElementListInteraction(driver);
     }
 
-    private static void logElementActionStep(WebElement element, String action) {
-        String data = element.getAccessibleName().isEmpty() ? element.toString() : element.getAccessibleName();
-        Logger.logStep("[Element Interaction] " + action + " [" + data + "] element");
+    private static void logElementActionStep(String action, String elementName) {
+        Logger.logStep("[Element Interaction] " + action + " [" + elementName + "] element");
     }
 
 }
