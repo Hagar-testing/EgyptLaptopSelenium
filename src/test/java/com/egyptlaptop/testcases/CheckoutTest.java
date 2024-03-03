@@ -2,6 +2,7 @@ package com.egyptlaptop.testcases;
 
 import com.egyptlaptop.base.BaseTest;
 import com.egyptlaptop.data.reader.TestDataProviders;
+import com.egyptlaptop.listeners.RetryAnalyzer;
 import com.egyptlaptop.pages.MainPage;
 import io.qameta.allure.Description;
 import io.qameta.allure.Feature;
@@ -19,7 +20,8 @@ public class CheckoutTest extends BaseTest {
     @Story("Checkout Process")
     @Description("Verify if the checkout process works correctly")
     @Test(dataProvider = "orderData", dataProviderClass = TestDataProviders.class,
-            description = "Test the checkout process with provided data")
+            description = "Test the checkout process with provided data",
+            retryAnalyzer = RetryAnalyzer.class)
     public void checkIfCheckoutWorks(HashMap<String, String> data) {
         new MainPage(getDriver())
                 .load()
