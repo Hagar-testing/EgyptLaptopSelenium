@@ -1,8 +1,6 @@
 package com.egyptlaptop.testcases;
 
 import com.egyptlaptop.base.BaseTest;
-import com.egyptlaptop.data.reader.TestDataProviders;
-import com.egyptlaptop.listeners.RetryAnalyzer;
 import com.egyptlaptop.pages.MainPage;
 import io.qameta.allure.Description;
 import io.qameta.allure.Feature;

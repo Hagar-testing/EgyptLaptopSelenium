@@ -7,7 +7,6 @@ import com.egyptlaptop.pages.MainPage;
 import io.qameta.allure.Description;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.HashMap;
