@@ -6,5 +6,7 @@ public class ProductListPageConstants {
 
     public static final String CATEGORY_ITEM_CLASS = "ty-mainbox-title";
     // In stock checkbox locator
-    public static final String IN_STOCK_CHECKBOX_XPATH = "//li[contains(., 'In stock')]/input[@type='checkbox']";
+    public static final String IN_STOCK_CHECKBOX_XPATH = "//label[@for='elm_checkbox_562_42_Y']//span[contains(text(),'In stock')]";
+
+    public static final String IN_STOCK_CHECKBOX_NAME = "in stock checkbox";
 }

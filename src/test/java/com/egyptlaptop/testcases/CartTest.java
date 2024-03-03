@@ -1,7 +1,6 @@
 package com.egyptlaptop.testcases;
 
 import com.egyptlaptop.base.BaseTest;
-import com.egyptlaptop.listeners.RetryAnalyzer;
 import com.egyptlaptop.pages.MainPage;
 import io.qameta.allure.Description;
 import io.qameta.allure.Feature;
@@ -14,8 +13,7 @@ public class CartTest extends BaseTest {
 
     @Story("Add Product to Cart")
     @Description("Verify if the quantity is added correctly to the cart")
-    @Test(description = "Verify if the quantity is added correctly to the cart",
-            retryAnalyzer = RetryAnalyzer.class)
+    @Test(description = "Verify if the quantity is added correctly to the cart")
     public void checkIfQuantityIsAddedCorrectlyToCart() {
         String quantityToBeAdded = String.valueOf(1);
         String text = new MainPage(getDriver())

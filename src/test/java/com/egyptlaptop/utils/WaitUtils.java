@@ -15,8 +15,8 @@ public class WaitUtils {
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
-    public void waitForElementToBeClickable(By locator) {
-        wait.until(ExpectedConditions.elementToBeClickable(locator));
+    public WebElement waitForElementToBeClickable(WebElement element) {
+        return wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
     public WebElement waitForVisibilityOfElement(WebElement element) {

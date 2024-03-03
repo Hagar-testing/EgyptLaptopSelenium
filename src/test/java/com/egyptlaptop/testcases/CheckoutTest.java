@@ -27,6 +27,7 @@ public class CheckoutTest extends BaseTest {
                 .load()
                 .clickOnCategory()
                 .selectCategory()
+                .checkInStockCheckBox()
                 .clickOnProduct()
                 .addProductToCart(String.valueOf(1))
                 .navigateToCartPage()

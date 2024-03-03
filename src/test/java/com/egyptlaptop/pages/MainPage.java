@@ -64,7 +64,7 @@ public class MainPage extends BasePage {
 
     @Step
     public String getFirstSubCategoryText(){
-        return elementInteraction.locateElement(categoryItem_button, LocatorType.WITH_WAIT)
+        return elementInteraction.locateElement(categoryItem_button, LocatorType.WAIT_VISIBILITY)
                 .getText();
     }
 

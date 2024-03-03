@@ -1,10 +1,15 @@
 package com.egyptlaptop.pages;
 
 import com.egyptlaptop.base.BasePage;
+import com.egyptlaptop.enums.LocatorType;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 import static com.egyptlaptop.constants.pages.ProductListPageConstants.*;
 
@@ -28,8 +33,9 @@ public class ProductsListPage extends BasePage {
         return new ProductDetailsPage(driver);
     }
 
+    @Step
     public ProductsListPage checkInStockCheckBox(){
-        inStock_checkbox.click();
+        elementInteraction.simpleClick(inStock_checkbox, LocatorType.WAIT_CLICKABLE,IN_STOCK_CHECKBOX_NAME);
         return this;
     }
 

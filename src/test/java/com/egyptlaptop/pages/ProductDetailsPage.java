@@ -45,7 +45,7 @@ public class ProductDetailsPage extends BasePage {
     public CartPage navigateToCartPage(){
         elementInteraction
                 .javascriptClick(cart_button,CART_BUTTON_NAME)
-                .javascriptClick(viewCartDropDown_button, LocatorType.WITH_WAIT,VIEW_CART_DROPDOWN_BUTTON_NAME);
+                .javascriptClick(viewCartDropDown_button, LocatorType.WAIT_VISIBILITY,VIEW_CART_DROPDOWN_BUTTON_NAME);
         return new CartPage(driver);
     }
 }

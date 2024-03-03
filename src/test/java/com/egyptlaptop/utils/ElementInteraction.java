@@ -1,7 +1,6 @@
 package com.egyptlaptop.utils;
 
 import com.egyptlaptop.enums.LocatorType;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -27,8 +26,11 @@ public class ElementInteraction {
             case LOCATE_ONLY -> {
                 return element;
             }
-            case WITH_WAIT -> {
+            case WAIT_VISIBILITY -> {
                 return waitUtils.waitForVisibilityOfElement(element);
+            }
+            case WAIT_CLICKABLE ->{
+                return waitUtils.waitForElementToBeClickable(element);
             }
             default -> throw new IllegalArgumentException("Invalid locator type");
         }
