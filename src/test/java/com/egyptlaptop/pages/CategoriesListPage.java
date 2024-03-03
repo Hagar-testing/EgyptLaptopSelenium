@@ -6,7 +6,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import static com.egyptlaptop.constants.locators.CategoriesListLocators.CATEGORY_ITEM_CLASS;
+import static com.egyptlaptop.constants.pages.CategoriesPageConstants.CATEGORY_ITEM_CLASS;
+import static com.egyptlaptop.constants.pages.CategoriesPageConstants.CATEGORY_ITEM_ELEMENT_NAME;
 
 public class CategoriesListPage extends BasePage {
 
@@ -19,7 +20,7 @@ public class CategoriesListPage extends BasePage {
 
     @Step
     public ProductsListPage selectCategory(){
-        elementInteraction.simpleClick(categoryItem,"category item");
+        elementInteraction.simpleClick(categoryItem,CATEGORY_ITEM_ELEMENT_NAME);
         return new ProductsListPage(driver);
     }
 

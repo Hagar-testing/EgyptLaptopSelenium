@@ -1,13 +1,12 @@
 package com.egyptlaptop.pages;
 
 import com.egyptlaptop.base.BasePage;
-import com.egyptlaptop.utils.ElementInteraction;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import static com.egyptlaptop.constants.locators.CheckoutLocators.*;
+import static com.egyptlaptop.constants.pages.CheckoutPageConstants.*;
 
 public class CheckoutPage extends BasePage {
 
@@ -32,12 +31,12 @@ public class CheckoutPage extends BasePage {
 
 
     @Step
-    public CompleteOrderPage fillCheckoutData(String firstName,String phone,String address){
-        elementInteraction.setInput(firstName_input, firstName,"first name")
-                .setInput(phone_input,phone, "phone")
-                .setInput(address_input,address, "address")
-                .simpleClick(acceptTerms_checkbox, "accept terms checkbox");
-                //.simpleClick(submit_button);
+    public CompleteOrderPage fillCheckoutData(String firstName, String phone, String address) {
+        elementInteraction.setInput(firstName_input, firstName, FIRST_NAME_INPUT_ELEMENT_NAME)
+                .setInput(phone_input, phone, PHONE_INPUT_ELEMENT_NAME)
+                .setInput(address_input, address, ADDRESS_INPUT_ELEMENT_NAME)
+                .simpleClick(acceptTerms_checkbox, ACCEPT_TERMS_CHECKBOX_ELEMENT_NAME);
+        //.simpleClick(submit_button);
 
         return new CompleteOrderPage(driver);
     }

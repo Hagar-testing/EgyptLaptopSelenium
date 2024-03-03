@@ -6,8 +6,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import static com.egyptlaptop.constants.locators.ProductListLocators.IN_STOCK_CHECKBOX_XPATH;
-import static com.egyptlaptop.constants.locators.ProductListLocators.PRODUCT_XPATH;
+import static com.egyptlaptop.constants.pages.ProductListPageConstants.IN_STOCK_CHECKBOX_XPATH;
+import static com.egyptlaptop.constants.pages.ProductListPageConstants.PRODUCT_XPATH;
 
 public class ProductsListPage extends BasePage {
 

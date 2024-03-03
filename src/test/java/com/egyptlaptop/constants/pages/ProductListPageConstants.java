@@ -1,6 +1,6 @@
-package com.egyptlaptop.constants.locators;
+package com.egyptlaptop.constants.pages;
 
-public class ProductListLocators {
+public class ProductListPageConstants {
     // Product locator
     public static final String PRODUCT_XPATH = "//div[@id='categories_view_pagination_contents']//div[@class='ty-column4']//div[@class='ut2-gl__item ']";
 

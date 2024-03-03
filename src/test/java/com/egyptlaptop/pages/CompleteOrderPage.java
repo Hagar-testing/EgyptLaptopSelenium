@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import static com.egyptlaptop.constants.locators.CompleteOrderLocators.PLACE_ORDER_TEXT_CLASS;
+import static com.egyptlaptop.constants.pages.CompleteOrderPageConstants.PLACE_ORDER_TEXT_CLASS;
 
 public class CompleteOrderPage extends BasePage {
 

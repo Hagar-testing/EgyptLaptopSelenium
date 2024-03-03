@@ -7,9 +7,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import java.util.List;
-import static com.egyptlaptop.constants.locators.MainPageLocators.CATEGORY_XPATH;
-import static com.egyptlaptop.constants.locators.MainPageLocators.SEARCH_INPUT_ID;
-import static com.egyptlaptop.constants.locators.MainPageLocators.SEARCH_PRODUCTS_LIST_TITLES_XPATH;
+
+import static com.egyptlaptop.constants.pages.MainPageConstants.*;
 
 public class MainPage extends BasePage {
 
@@ -38,7 +37,7 @@ public class MainPage extends BasePage {
     }
     @Step
     public MainPage sendSearchInput(String searchText) {
-        elementInteraction.setInput(search_input,searchText,"search input");
+        elementInteraction.setInput(search_input,searchText,SEARCH_INPUT_NAME);
         return this;
     }
 
@@ -46,8 +45,9 @@ public class MainPage extends BasePage {
         return  searchResults_list.size() > 0;
     }
 
+    @Step
     public CategoriesListPage clickOnCategory(){
-         elementInteraction.simpleClick(first_category_div,"first category on categories list");
+         elementInteraction.simpleClick(first_category_div, FIRST_CATEGORY_NAME);
          return new CategoriesListPage(driver);
     }
 

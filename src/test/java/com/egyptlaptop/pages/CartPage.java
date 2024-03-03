@@ -6,8 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import static com.egyptlaptop.constants.locators.CartLocators.CHECKOUT_BUTTON_XPATH;
-import static com.egyptlaptop.constants.locators.CartLocators.QUANTITY_INPUT_XPATH;
+import static com.egyptlaptop.constants.pages.CartPageConstants.*;
 
 public class CartPage extends BasePage {
 
@@ -27,7 +26,7 @@ public class CartPage extends BasePage {
 
     @Step
     public CheckoutPage clickOnCheckout(){
-        elementInteraction.simpleClick(checkout_button,"checkout button");
+        elementInteraction.simpleClick(checkout_button,CHECKOUT_BUTTON_ELEMENT_NAME);
         return new CheckoutPage(driver);
     }
 }

@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import static com.egyptlaptop.constants.locators.ProductDetailsLocators.*;
+import static com.egyptlaptop.constants.pages.ProductDetailsPageConstants.*;
 
 public class ProductDetailsPage extends BasePage {
 
@@ -33,9 +33,9 @@ public class ProductDetailsPage extends BasePage {
     @Step
     public ProductDetailsPage addProductToCart(String quantity){
         elementInteraction
-                .setInputWithJavaScriptExecutor(counter_input, quantity,"counter input")
-                .javascriptClick(addToCartButton, "add to cart button")
-                .simpleClick(continueShipping_btn, "continue shipping button");
+                .setInputWithJavaScriptExecutor(counter_input, quantity,COUNTER_INPUT_NAME)
+                .javascriptClick(addToCartButton, ADD_TO_CART_BUTTON_NAME)
+                .simpleClick(continueShipping_btn, CONTINUE_SHIPPING_BUTTON_NAME);
 
         return this;
 
@@ -44,8 +44,8 @@ public class ProductDetailsPage extends BasePage {
     @Step
     public CartPage navigateToCartPage(){
         elementInteraction
-                .javascriptClick(cart_button,"cart button")
-                .javascriptClick(viewCartDropDown_button, LocatorType.WITH_WAIT,"view cart button in cart drop down list");
+                .javascriptClick(cart_button,CART_BUTTON_NAME)
+                .javascriptClick(viewCartDropDown_button, LocatorType.WITH_WAIT,VIEW_CART_DROPDOWN_BUTTON_NAME);
         return new CartPage(driver);
     }
 }
