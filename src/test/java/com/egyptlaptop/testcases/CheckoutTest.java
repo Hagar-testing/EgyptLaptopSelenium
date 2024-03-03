@@ -20,7 +20,7 @@ public class CheckoutTest extends BaseTest {
     @Story("Checkout Process")
     @Description("Verify if the checkout process works correctly")
     @Test(dataProvider = "orderData", dataProviderClass = TestDataProviders.class,
-            description = "Test the checkout process with provided data",
+            description = "Verify if the checkout process works correctly",
             retryAnalyzer = RetryAnalyzer.class)
     public void checkIfCheckoutWorks(HashMap<String, String> data) {
         new MainPage(getDriver())

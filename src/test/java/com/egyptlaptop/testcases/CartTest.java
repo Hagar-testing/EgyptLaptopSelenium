@@ -14,7 +14,7 @@ public class CartTest extends BaseTest {
 
     @Story("Add Product to Cart")
     @Description("Verify if the quantity is added correctly to the cart")
-    @Test(description = "Test adding a product to the cart and checking the quantity",
+    @Test(description = "Verify if the quantity is added correctly to the cart",
             retryAnalyzer = RetryAnalyzer.class)
     public void checkIfQuantityIsAddedCorrectlyToCart() {
         String quantityToBeAdded = String.valueOf(1);

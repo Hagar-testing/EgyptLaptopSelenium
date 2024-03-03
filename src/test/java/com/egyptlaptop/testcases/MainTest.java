@@ -17,7 +17,7 @@ public class MainTest extends BaseTest {
     @Story("Search Functionality")
     @Description("Verify if the search function works successfully")
     @Test(dataProvider = "searchData", dataProviderClass = TestDataProviders.class,
-            description = "Test the successful completion of the search process")
+            description = "Test if the search process works successfully")
     public void CheckIfSearchFunctionWorksSuccessfully(HashMap<String, String> data) {
         boolean isTestResultTitlesMatchesSearchKey = new MainPage(getDriver())
                 .load()
