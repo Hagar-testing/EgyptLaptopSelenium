@@ -6,17 +6,17 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-
 import java.time.Duration;
-import static com.egyptlaptop.enums.BrowserType.CHROME;
-import static org.openqa.selenium.logging.LogType.BROWSER;
+import static com.egyptlaptop.utils.ConfigUtils.getBrowser;
 
 
 public class DriverFactory {
 
     public WebDriver initializeDriver() {
-        String browserKey = System.getProperty(BROWSER, CHROME.getKey());
+        String browserKey = getBrowser();
+
         WebDriver driver;
+
 
         BrowserType browser = BrowserType.getByKey(browserKey.toLowerCase());
         switch (browser) {

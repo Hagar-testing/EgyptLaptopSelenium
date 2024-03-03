@@ -10,5 +10,6 @@ public class ConfigConstants {
     public static final String PRODUCTION_PROPERTIES_PATH = CONFIG_PATH + "production.properties";
     public static final String STAGING_PROPERTIES_PATH =  CONFIG_PATH + "prod.properties";
 
+    public static final String BROWSER = "browser";
 
 }
