@@ -1,6 +1,7 @@
 package com.egyptlaptop.pages;
 
 import com.egyptlaptop.base.BasePage;
+import com.egyptlaptop.enums.LocatorType;
 import com.egyptlaptop.utils.ConfigUtils;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
@@ -21,11 +22,12 @@ public class MainPage extends BasePage {
     @FindBy(xpath = CATEGORY_XPATH)
     WebElement first_category_div;
 
-    @FindBy(xpath = "//a[normalize-space()='Profile details']")
-    WebElement profileDetails_btn;
 
-    @FindBy(css = "a[class=\"ty-menu__item-link a-first-lvl childs\"]")
+    @FindBy(css = CATEGORIES_DROPDOWN_CSS)
     WebElement categories_dropdown;
+
+    @FindBy(css = CATEGORY_ITEM_CSS)
+    WebElement categoryItem_button;
     public MainPage(WebDriver driver) {
         super(driver);
     }
@@ -41,6 +43,7 @@ public class MainPage extends BasePage {
         return this;
     }
 
+    @Step
     public boolean isSearchResultNotEmpty(){
         return  searchResults_list.size() > 0;
     }
@@ -51,13 +54,24 @@ public class MainPage extends BasePage {
          return new CategoriesListPage(driver);
     }
 
+
     @Step
-    public boolean isProfileDetailsDisplayed(){
-        return profileDetails_btn.isDisplayed();
+    public MainPage selectCategoryFromDropdownList(){
+        elementInteraction.simpleClick(categories_dropdown,CATEGORIES_DROPDOWN_NAME);
+        return this;
+
     }
 
     @Step
-    public void test(){
-        categories_dropdown.click();
+    public String getFirstSubCategoryText(){
+        return elementInteraction.locateElement(categoryItem_button, LocatorType.WITH_WAIT)
+                .getText();
     }
+
+    @Step
+    public ProductsListPage selectSubCategory(){
+        categoryItem_button.click();
+        return new ProductsListPage(driver);
+    }
+
 }
