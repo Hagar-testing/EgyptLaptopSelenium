@@ -25,4 +25,11 @@
         </classes>
     </test>
 
+
+    <test name="product list">
+        <classes>
+            <class name="com.egyptlaptop.testcases.ProductsListTest"/>
+        </classes>
+    </test>
+
 </suite>
