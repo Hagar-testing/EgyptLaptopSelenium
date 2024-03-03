@@ -38,7 +38,7 @@
                     <properties>
                         <property>
                             <name>listener</name>
-                            <value>com.ecommerce.listeners.TestngListener</value>
+                            <value>com.egyptlaptop.listeners.TestngListener</value>
                         </property>
                     </properties>
                 </configuration>
